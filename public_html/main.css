@@ -1,0 +1,7 @@
+div.course {
+	float:left;
+}
+
+#course_add {
+	visibility: hidden;
+}
