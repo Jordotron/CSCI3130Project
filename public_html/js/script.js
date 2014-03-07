@@ -1,3 +1,17 @@
+function validate(){
+	var correct = true
+	
+	if(document.getElementById("course_name").value == "" || document.getElementById("course_name").value == null) correct = false;
+	var number = document.getElementById("course_name").value 
+	if(number == "" || number == null || isNaN(number) || number < 1000 || number > 9999) correct = false;
+	var start = document.getElementById("course_start").value 
+	if(start == "" || start == null || isNaN(start) || start < 0 || number > 2359) correct = false;
+	var end = document.getElementById("course_start").value 
+	if(end == "" || end == null || isNaN(end) || end < 0 || end > 2359) correct = false;
+	
+	return correct;
+}
+
 function show(){
 document.getElementById("course_add").style.visibility="visible";
 document.getElementById("show_button").style.visibility="hidden";
