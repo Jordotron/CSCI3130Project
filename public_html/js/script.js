@@ -1,4 +1,4 @@
-Function submit(){
+function submit(){
 	if(validate) document.getElementById("submit_button").click();
 }
 
