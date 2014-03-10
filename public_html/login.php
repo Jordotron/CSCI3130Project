@@ -40,7 +40,7 @@ if (strpos($user_email,'@') === false) {
 }
 
 	
-$result = mysql_query("SELECT `id`,`pwd`,`full_name`,`approved`,`user_level` FROM users WHERE 
+$result = mysql_query("SELECT `id`,`pwd`,`approved`,`user_level`,`user_name` FROM users WHERE 
            $user_cond
 			AND `banned` = '0'
 			") or die (mysql_error()); 
@@ -49,7 +49,7 @@ $num = mysql_num_rows($result);
   // Match row found with more than 1 results  - the user is authenticated. 
     if ( $num > 0 ) { 
 	
-	list($id,$pwd,$full_name,$approved,$user_level) = mysql_fetch_row($result);
+	list($id,$pwd,$approved,$user_level,$user_name) = mysql_fetch_row($result);
 	
 	if(!$approved) {
 	//$msg = urlencode("Account not activated. Please check your email for activation code");
@@ -69,7 +69,8 @@ $num = mysql_num_rows($result);
 
 	   // this sets variables in the session 
 		$_SESSION['user_id']= $id;  
-		$_SESSION['user_name'] = $full_name;
+		$_SESSION['user_name'] = $user_name;
+		$_SESSION['user_email'] = $user_email;
 		$_SESSION['user_level'] = $user_level;
 		$_SESSION['HTTP_USER_AGENT'] = md5($_SERVER['HTTP_USER_AGENT']);
 		
