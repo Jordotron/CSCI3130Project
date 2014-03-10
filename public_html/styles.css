@@ -1,3 +1,14 @@
+.skipple{
+font-family: 'Lobster Two', cursive;
+font-size: 36px;
+color: #252525;
+margin: 5px;
+}
+
+body{
+background-image: url('clouds.jpg');
+margin: 0;
+}
 .forms {
 background-color: #E4F8FA;
 font: normal 12px arial,verdana;
@@ -62,14 +73,24 @@ color: green;
 }
 
 .loginform {
-font: 16px normal arial;
-background-color: #E4F8FA;
-font: normal 12px arial,verdana;
+font: 18px normal arial;
+background-color: rgba(101,217,252,0.5);
+font: bold 12px arial;
+color: #252525;
 padding: 3px;
 border: 1px solid #CAE4FF;
+margin: 0 auto;
 }
 
 .loginform #txtbox {
 font: bold 16px arial;
-color: #f00;
+color: #252525;
+}
+
+#login{
+margin: 0 auto;
+}
+
+#logform{
+margin: 20px 0 0 0;
 }

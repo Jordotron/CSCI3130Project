@@ -102,7 +102,7 @@ $num = mysql_num_rows($result);
 					 
 
 ?>
-<html>
+<html style = "background-color: rgba(101,217,252,0.4)">
 <head>
 <title>Members Login</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
@@ -114,23 +114,19 @@ $num = mysql_num_rows($result);
   });
   </script>
 <link href="styles.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Lobster+Two:700' rel='stylesheet' type='text/css'>
 
 </head>
 
 <body>
+<div id="login">
 <table width="100%" border="0" cellspacing="0" cellpadding="5" class="main">
-  <tr> 
+  <!--<tr> 
     <td colspan="3">&nbsp;</td>
-  </tr>
+  </tr>-->
   <tr> 
-    <td width="160" valign="top"><p>&nbsp;</p>
-      <p>&nbsp; </p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p>
-      <p>&nbsp;</p></td>
-    <td width="732" valign="top"><p>&nbsp;</p>
-      <h3 class="titlehdr">Login Users 
-      </h3>  
+    
+    <td width="732" valign="top"><!--<p>&nbsp;</p>--> 
 	  <p>
 	  <?php
 	  /******************** ERROR MESSAGES*************************************************
@@ -146,9 +142,9 @@ $num = mysql_num_rows($result);
 	  /******************************* END ********************************/	  
 	  ?></p>
       <form action="login.php" method="post" name="logForm" id="logForm" >
-        <table width="65%" border="0" cellpadding="4" cellspacing="4" class="loginform">
+        <table width="50%" border="0" cellpadding="4" cellspacing="4" class="loginform">
           <tr> 
-            <td colspan="2">&nbsp;</td>
+            <td colspan="2"class="skipple">skipple</td>
           </tr>
           <tr> 
             <td width="28%">Username / Email</td>
@@ -171,9 +167,9 @@ $num = mysql_num_rows($result);
                 <p><a href="register.php">Register Free</a><font color="#FF6600"> 
                   |</font> <a href="forgot.php">Forgot Password</a> <font color="#FF6600"> 
                   </font></p>
-                <p><span style="font: normal 9px verdana">Powered by <a href="http://php-login-script.com">PHP 
-                  Login Script v2.3</a></span></p>
-              </div></td>
+               <!-- <p><span style="font: normal 9px verdana">Powered by <a href="http://php-login-script.com">PHP 
+                  Login Script v2.3</a></span></p>-->
+              </td>
           </tr>
         </table>
         <div align="center"></div>
@@ -182,12 +178,12 @@ $num = mysql_num_rows($result);
       <p>&nbsp;</p>
 	   
       </td>
-    <td width="196" valign="top">&nbsp;</td>
+	</td>
   </tr>
   <tr> 
     <td colspan="3">&nbsp;</td>
   </tr>
 </table>
-
+</div>
 </body>
 </html>
