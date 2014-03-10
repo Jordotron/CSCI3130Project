@@ -1,17 +1,15 @@
+/*
+SQL table structures that are being used in the application.
+*/
 
+/* The user table holds all user data. */
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL auto_increment,
   `md5_id` varchar(200) collate latin1_general_ci NOT NULL default '',
-  `full_name` tinytext collate latin1_general_ci NOT NULL,
   `user_name` varchar(200) collate latin1_general_ci NOT NULL default '',
   `user_email` varchar(220) collate latin1_general_ci NOT NULL default '',
   `user_level` tinyint(4) NOT NULL default '1',
   `pwd` varchar(220) collate latin1_general_ci NOT NULL default '',
-  `address` text collate latin1_general_ci NOT NULL,
-  `country` varchar(200) collate latin1_general_ci NOT NULL default '',
-  `tel` varchar(200) collate latin1_general_ci NOT NULL default '',
-  `fax` varchar(200) collate latin1_general_ci NOT NULL default '',
-  `website` text collate latin1_general_ci NOT NULL,
   `date` date NOT NULL default '0000-00-00',
   `users_ip` varchar(200) collate latin1_general_ci NOT NULL default '',
   `approved` int(1) NOT NULL default '0',
@@ -20,10 +18,18 @@ CREATE TABLE `users` (
   `ckey` varchar(220) collate latin1_general_ci NOT NULL default '',
   `ctime` varchar(220) collate latin1_general_ci NOT NULL default '',
   PRIMARY KEY  (`id`),
-  UNIQUE KEY `user_email` (`user_email`),
-  FULLTEXT KEY `idx_search` (`full_name`,`address`,`user_email`,`user_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=55 ;
+  UNIQUE KEY `user_email` (`user_email`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1;    
 
-
-INSERT INTO `users` VALUES (54, '', 'admin', 'admin', 'admin@localhost', 5, '4c09e75fa6fe36038ac240e9e4e0126cedef6d8c85cf0a1ae', 'admin', 'Switzerland', '4433093999', '', '', 0x323031302d30352d3034, '', 1, 0, 0, 'uqd1y4v', '1272992243');
-        
+/* The courses table holds all of the courses that the users are taking. This table is connected to the user table using the user ID as a foreign key. */
+CREATE TABLE `courses` (
+  `course_id` bigint(20) NOT NULL auto_increment,
+  `user_id` bigint(20) NOT NULL default '0',
+  `course_name` varchar(200) collate latin1_general_ci NOT NULL default '',
+  `course_program` varchar(4) collate latin1_general_ci NOT NULL default '',
+  `course_number` int(4) NOT NULL default '0000',
+  `start_time` int(4) NOT NULL default '0000',
+  `duration` int(3) NOT NULL default '000',
+  PRIMARY KEY (`course_id`),
+  FOREIGN KEY (`user_id`) REFERENCES users(id) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1;
