@@ -130,12 +130,8 @@
                                 $course_duration_status = true;
                             }
                         ?>
-
-<<<<<<< HEAD
-                        <input type="submit" id="form_course_add_button" id="course_add_button" value="Add Course" onclick="addCourse()">
-=======
                         <input type="submit" id="form_course_add_button" id="course_add_button" value="Add Course" style="visibility:hidden;" onclick="addCourse()">
->>>>>>> BuchkaWorkspace
+                        
                         <?php 
                             if($course_name_status === true && $course_code_status === true && $course_number_status === true && $course_start_time_status === true && $course_duration_status === true){
                                 $to = $_SESSION['user_email'];
@@ -151,10 +147,7 @@
                             }
                         ?>
                     </form>
-<<<<<<< HEAD
-=======
 					<button type="button" id="verify_button" style="visibility:hidden;" onclick="submit()">Add Course</button>
->>>>>>> BuchkaWorkspace
 
                     <button type="button" class="show_button" id="show_button" onclick="show()">+</button>
                     <div id="insert_before"></div>
@@ -168,22 +161,9 @@
                 <td width="160" valign="top">&nbsp;</td>
                 <td width="732" valign="top">
                     <?php
-<<<<<<< HEAD
-                        $result = mysql_query("SELECT course_name, course_program, course_number, start_time, duration FROM courses WHERE user_id = '".$_SESSION['user_id']."'");
-
-                        if (mysql_num_rows($result) > 0) {
-                            echo '<pre>';
-                            var_dump($result);
-                            echo '</pre>';
-
-
-=======
                         $result = mysql_query("SELECT * FROM courses WHERE user_id = ".$_SESSION['user_id'].";");
-                        $values = mysql_fetch_array($result);
-                        var_dump($values);
                         if (mysql_num_rows($result) > 0) {
                             // Print a table that holds all of the user's courses
->>>>>>> BuchkaWorkspace
                             echo "<table border='1'>
                             <tr>
                             <th>Course Name</th>
@@ -192,26 +172,12 @@
                             <th>Duration</th>
                             </tr>";
 
-                            while ($row = mysqli_fetch_array($result)) {
-<<<<<<< HEAD
-                                /*
-                                echo "<tr>";
-                                echo "<td>" . $row['course_name'] . "</td>";
-                                echo "<td>" . $row['course_program'] . " " . $row['course_number'] . "</td>";
-                                echo "<td>" . $row['start_time'] . "</td>";
-                                echo "<td>" . $row['duration'] . "</td>";
-                                echo "</tr>";
-                                */
-                            }
-                            echo "</table>";
-                        } else {
-=======
+                            while ($row = mysql_fetch_array($result)) {
                                 echo "<tr><td>".$row['course_name']."</td><td>".$row['course_program']." ".$row['course_number']."</td><td>".$row['start_time']."</td><td>".$row['duration']."</td></tr>";
                             }
                             echo "</table>";
                         } else {
                             // The user has no courses registered, so don't show the table.
->>>>>>> BuchkaWorkspace
                             echo "No courses registered.";
                         }
                     ?>
