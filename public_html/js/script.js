@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function validate(){
 	var correct = true
 	
@@ -12,7 +13,27 @@ function validate(){
 	return correct;
 }
 
+=======
+function submit(){
+	if(validate()) document.getElementById("form_course_add_button").click();
+}
+
+function validate(){
+		var correct = true
+		
+		if(document.getElementById("form_course_name").value == "" || document.getElementById("form_course_name").value == null) correct = false;
+		var number = document.getElementById("form_course_number").value 
+		if(number == "" || number == null || isNaN(number) || number < 1000 || number > 9999) correct = false;
+		var start = document.getElementById("form_course_start_time").value 
+		if(start == "" || start == null || isNaN(start) || start < 0 || number > 2359) correct = false;
+		var duration = document.getElementById("form_course_duration").value 
+		if(duration == "" || duration == null || isNaN(duration) || duration < 0 || duration > 200) correct = false;
+		
+		return correct;
+}
+>>>>>>> BuchkaWorkspace
 function show(){
+document.getElementById("verify_button").style.visibility="visible";
 document.getElementById("course_add").style.visibility="visible";
 document.getElementById("show_button").style.visibility="hidden";
 }
@@ -62,3 +83,4 @@ function addCourse(){
 	
 	//document.getElementById("course_name").innerHTML += "Test!";
 }
+
