@@ -1,8 +1,4 @@
-/*
-SQL table structures that are being used in the application.
-*/
 
-/* The user table holds all user data. */
 CREATE TABLE `users` (
   `id` bigint(20) NOT NULL auto_increment,
   `md5_id` varchar(200) collate latin1_general_ci NOT NULL default '',
@@ -21,7 +17,6 @@ CREATE TABLE `users` (
   UNIQUE KEY `user_email` (`user_email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1;    
 
-/* The courses table holds all of the courses that the users are taking. This table is connected to the user table using the user ID as a foreign key. */
 CREATE TABLE `courses` (
   `course_id` bigint(20) NOT NULL auto_increment,
   `user_id` bigint(20) NOT NULL default '0',
