@@ -66,3 +66,4 @@ function addCourse(){
 	
 	//document.getElementById("course_name").innerHTML += "Test!";
 }
+
