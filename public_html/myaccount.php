@@ -109,7 +109,7 @@
                             }
                         ?>
 
-                        <input type="text" id="form_course_start_time" name="form_course_start_time" placeholder="Course Start Time"><br>
+                        <input type="text" id="form_course_start_time" name="form_course_start_time" placeholder="Starts: 1600"><br>
                         <?php 
                             if (empty($_POST['form_course_start_time'])) {
                                 $course_start_time_status = false;
@@ -120,7 +120,7 @@
                             }
                         ?>
 
-                        <input type="text" id="form_course_duration" name="form_course_duration" placeholder="Course Duration (min)"><br>
+                        <input type="text" id="form_course_duration" name="form_course_duration" placeholder="Duration: 200"><br>
                         <?php 
                             if (empty($_POST['form_course_duration'])) {
                                 $course_duration_status = false;
